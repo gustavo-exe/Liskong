@@ -45,6 +45,8 @@ namespace Liskong
         private void btnCambiarDatos_Click(object sender, EventArgs e)
         {
             EditarEmpleado ventana = new EditarEmpleado(empleadoIdentidad);
+            ventana.MdiParent = this;
+            ventana.Dock = DockStyle.Fill;
             ventana.Show();
         }
     }

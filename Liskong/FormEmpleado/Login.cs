@@ -40,7 +40,7 @@ namespace Liskong
             }
             else
             {
-                Menu formMenu = new Menu();
+                Menu formMenu = new Menu(tablaEmpleado.NumeroDeIdentidad, tablaEmpleado.Nombre, tablaEmpleado.Apellido);
                 this.Hide();
                 formMenu.Show();
             }

@@ -16,7 +16,7 @@ namespace Liskong
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormEmpleado.CrearEmpleado());
+            Application.Run(new Login());
         }
     }
 }

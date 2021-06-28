@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Liskong.FormEmpleado;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,12 @@ namespace Liskong
         {
             lblApellido.Text = empleadoAppelido;
             lblNombre.Text = empleadoNombre;
+        }
+
+        private void btnCambiarDatos_Click(object sender, EventArgs e)
+        {
+            EditarEmpleado ventana = new EditarEmpleado(empleadoIdentidad);
+            ventana.Show();
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Liskong
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
             this.txtPassword.TabIndex = 18;
+            this.txtPassword.Text = "1234";
             // 
             // label2
             // 
@@ -69,6 +70,7 @@ namespace Liskong
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(205, 20);
             this.txtEmpleado.TabIndex = 16;
+            this.txtEmpleado.Text = "1012199900273";
             // 
             // label1
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryStreaingUnicah.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +31,12 @@ namespace Liskong
                 MessageBox.Show("Ingrese la contraseña.");
                 return;
             }
+            // Encriptacion
+            Hash hash = new Hash();
+            string password = hash.obtenerHash256(txtPassword.Text);
 
             //Consulta
-            var tablaEmpleado = entity.Empleado.FirstOrDefault(x => x.NumeroDeIdentidad == txtEmpleado.Text && x.Password == txtPassword.Text);
+            var tablaEmpleado = entity.Empleado.FirstOrDefault(x => x.NumeroDeIdentidad == txtEmpleado.Text && x.Password == password);
             if (tablaEmpleado == null)
             {
                 MessageBox.Show("Usuario o contraseña incorrectas.");

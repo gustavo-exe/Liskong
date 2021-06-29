@@ -56,5 +56,12 @@ namespace Liskong
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditarCliente ventana = new EditarCliente();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Hash.cs" />
+    <Compile Include="Clases\LINQTODATATABLE.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +94,12 @@
     <Compile Include="FormCliente\CrearCliente.Designer.cs">
       <DependentUpon>CrearCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCliente\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmpleado\CrearEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente\CrearCliente.resx">
       <DependentUpon>CrearCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleado\CrearEmpleado.resx">
       <DependentUpon>CrearEmpleado.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using Liskong.FormEmpleado;
+﻿using Liskong.FormCliente;
+using Liskong.FormEmpleado;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,13 @@ namespace Liskong
         {
             EditarEmpleado ventana = new EditarEmpleado(empleadoIdentidad);
             ventana.MdiParent = this;
-            ventana.Dock = DockStyle.Fill;
+            ventana.Show();
+        }
+
+        private void crearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CrearCliente ventana = new CrearCliente();
+            ventana.MdiParent = this;
             ventana.Show();
         }
     }

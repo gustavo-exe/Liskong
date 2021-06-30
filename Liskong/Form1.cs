@@ -1,5 +1,6 @@
 ﻿using Liskong.FormCliente;
 using Liskong.FormEmpleado;
+using Liskong.FormDepartamento;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,13 @@ namespace Liskong
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditarCliente ventana = new EditarCliente();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void crearToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CRUDDepartamento ventana = new CRUDDepartamento();
             ventana.MdiParent = this;
             ventana.Show();
         }

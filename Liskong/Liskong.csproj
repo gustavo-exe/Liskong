@@ -61,6 +61,9 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Departamento.cs">
+      <DependentUpon>EntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Empleado.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>

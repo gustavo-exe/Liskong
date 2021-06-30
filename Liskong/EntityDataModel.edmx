@@ -17,6 +17,13 @@
           <Property Name="Telefono" Type="int" Nullable="false" />
           <Property Name="Correo" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="IdEmpleado" />
@@ -33,6 +40,7 @@
         </EntityType>
         <EntityContainer Name="LiskongModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -56,6 +64,7 @@
         <EntityContainer Name="LiskongEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="Cliente" EntityType="LiskongModel.Cliente" />
+          <EntitySet Name="Departamento" EntityType="LiskongModel.Departamento" />
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -68,6 +77,13 @@
           <Property Name="Pais" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="Int32" Nullable="false" />
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="IdDepartamento" />
+          </Key>
+          <Property Name="IdDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -100,6 +116,14 @@
                 <ScalarProperty Name="NombreCompleto" ColumnName="NombreCompleto" />
                 <ScalarProperty Name="NumeroDeIdentidad" ColumnName="NumeroDeIdentidad" />
                 <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento">
+            <EntityTypeMapping TypeName="LiskongModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

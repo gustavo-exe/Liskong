@@ -39,6 +39,9 @@ namespace Liskong.FormDepartamento
         {
             txtNombre.ReadOnly = btnNuevo.Visible = false;
             btnCancelar.Visible = true;
+            dataGridDepartamento.ClearSelection();
+            editar = false;
+            txtNombre.Text = string.Empty;
 
         }
 
@@ -46,6 +49,7 @@ namespace Liskong.FormDepartamento
         {
             if (editar)
             {
+                //Guardado de cambios al editar
                 var rowDepartamento = entity.Departamento.FirstOrDefault(x => x.IdDepartamento == idDepartamento);
                 rowDepartamento.Nombre = txtNombre.Text ;
                 entity.SaveChanges();
@@ -55,6 +59,7 @@ namespace Liskong.FormDepartamento
             {
                 try
                 {
+                    //Ingresar un nuevo departamento
                     Departamento rowDepartamento = new Departamento();
                     rowDepartamento.Nombre = txtNombre.Text;
 
@@ -69,7 +74,8 @@ namespace Liskong.FormDepartamento
                     MessageBox.Show(ex.Message);
                 }
             }
-            btnCancelar.Visible = false;
+            //Estados de los componentes
+            btnCancelar.Visible = editar = false;
             btnNuevo.Visible = true;
             txtNombre.ReadOnly = true;
         }
@@ -86,6 +92,7 @@ namespace Liskong.FormDepartamento
             {
                 try
                 {
+                    //Habiltar la edicion del elemento seleccionado
                     idDepartamento = Convert.ToInt64(dataGridDepartamento.SelectedCells[0].Value);
                     var rowDepartamento = entity.Departamento.FirstOrDefault(x => x.IdDepartamento == idDepartamento);
                     txtNombre.Text = rowDepartamento.Nombre;
@@ -108,9 +115,32 @@ namespace Liskong.FormDepartamento
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //entity.Departamento.RemoveRange(entity.Departamento.Where(x => x.IdDepartamento == idDepartamento));
-            //entity.SaveChanges();
-            //SelectAllDepartamento();
+            //Obtener nombre del elemento seleccionado
+            var rowDepartamento = entity.Departamento.FirstOrDefault(x => x.IdDepartamento == idDepartamento);
+            var departamentoQueEliminara = rowDepartamento.Nombre;
+
+            //Elementos para el MessageBox
+            string message = "Seguro que quiere eliminar " + departamentoQueEliminara;
+            string title = "Eliminar departamento";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    //Eliminar el departamento de la base de datos
+                    entity.Departamento.RemoveRange(entity.Departamento.Where(x => x.IdDepartamento == idDepartamento));
+                    entity.SaveChanges();
+                    SelectAllDepartamento();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

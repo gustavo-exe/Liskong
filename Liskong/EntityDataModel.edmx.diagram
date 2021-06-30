@@ -4,15 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="301f0da3ba744a6ba5c5512bded00753" Name="Diagram1">
-        <EntityTypeShape EntityType="LiskongModel.Cliente" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LiskongModel.Departamento" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LiskongModel.Empleado" Width="1.75" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LiskongModel.Reporte" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="LiskongModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="LiskongModel.FK_Reporte_Cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="LiskongModel.FK_Reporte_Departamento" ManuallyRouted="false" />
-        <AssociationConnector Association="LiskongModel.FK_Reporte_Empleado" ManuallyRouted="false" />
+      <Diagram DiagramId="e989cff70f9741638fac3f1fc1e867a7" Name="Diagram1">
+        <EntityTypeShape EntityType="LiskongModel.Empleado" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiskongModel.Cliente" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

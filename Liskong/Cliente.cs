@@ -14,12 +14,6 @@ namespace Liskong
     
     public partial class Cliente
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
-        {
-            this.Reporte = new HashSet<Reporte>();
-        }
-    
         public int IdCliente { get; set; }
         public string NumeroDeIdentidad { get; set; }
         public string NombreCompleto { get; set; }
@@ -27,8 +21,5 @@ namespace Liskong
         public string Pais { get; set; }
         public int Telefono { get; set; }
         public string Correo { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reporte { get; set; }
     }
 }

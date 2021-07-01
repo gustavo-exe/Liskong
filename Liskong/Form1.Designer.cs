@@ -155,19 +155,20 @@ namespace Liskong
             // editarToolStripMenuItem1
             // 
             this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.editarToolStripMenuItem1.Text = "Crear";
+            this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
             // visualizarToolStripMenuItem
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // actulizarToolStripMenuItem
             // 
             this.actulizarToolStripMenuItem.Name = "actulizarToolStripMenuItem";
-            this.actulizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actulizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.actulizarToolStripMenuItem.Text = "Actualizar";
             // 
             // menuStrip4
@@ -191,7 +192,7 @@ namespace Liskong
             // crearToolStripMenuItem2
             // 
             this.crearToolStripMenuItem2.Name = "crearToolStripMenuItem2";
-            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.crearToolStripMenuItem2.Size = new System.Drawing.Size(102, 22);
             this.crearToolStripMenuItem2.Text = "Crear";
             this.crearToolStripMenuItem2.Click += new System.EventHandler(this.crearToolStripMenuItem2_Click);
             // 

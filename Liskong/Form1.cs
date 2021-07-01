@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Liskong.FomReporte;
 
 namespace Liskong
 {
@@ -68,6 +69,13 @@ namespace Liskong
         private void crearToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             CRUDDepartamento ventana = new CRUDDepartamento();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CrearReporte ventana = new CrearReporte();
             ventana.MdiParent = this;
             ventana.Show();
         }

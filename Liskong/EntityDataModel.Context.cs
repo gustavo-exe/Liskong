@@ -28,5 +28,6 @@ namespace Liskong
         public virtual DbSet<Empleado> Empleado { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Departamento> Departamento { get; set; }
+        public virtual DbSet<Reporte> Reporte { get; set; }
     }
 }

@@ -44,6 +44,8 @@ namespace Liskong.FomReporte
             this.txtDetalle = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cmbDepartamento = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCliente)).BeginInit();
@@ -109,6 +111,8 @@ namespace Liskong.FomReporte
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cmbDepartamento);
             this.groupBox2.Controls.Add(this.btnCancelar);
             this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.txtDetalle);
@@ -119,7 +123,7 @@ namespace Liskong.FomReporte
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 275);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(735, 260);
+            this.groupBox2.Size = new System.Drawing.Size(735, 283);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Creacion de reporte";
@@ -144,6 +148,7 @@ namespace Liskong.FomReporte
             this.cmbTipo.Location = new System.Drawing.Point(280, 29);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.Sorted = true;
             this.cmbTipo.TabIndex = 2;
             // 
             // cbEstado
@@ -167,7 +172,7 @@ namespace Liskong.FomReporte
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 79);
+            this.label4.Location = new System.Drawing.Point(251, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 5;
@@ -175,7 +180,7 @@ namespace Liskong.FomReporte
             // 
             // txtDetalle
             // 
-            this.txtDetalle.Location = new System.Drawing.Point(251, 106);
+            this.txtDetalle.Location = new System.Drawing.Point(254, 141);
             this.txtDetalle.MaxLength = 300;
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
@@ -184,21 +189,39 @@ namespace Liskong.FomReporte
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(292, 217);
+            this.btnGuardar.Location = new System.Drawing.Point(295, 252);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(411, 217);
+            this.btnCancelar.Location = new System.Drawing.Point(414, 252);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // cmbDepartamento
+            // 
+            this.cmbDepartamento.FormattingEnabled = true;
+            this.cmbDepartamento.Location = new System.Drawing.Point(326, 76);
+            this.cmbDepartamento.Name = "cmbDepartamento";
+            this.cmbDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.cmbDepartamento.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(246, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Departamento";
             // 
             // CrearReporte
             // 
@@ -209,6 +232,7 @@ namespace Liskong.FomReporte
             this.Controls.Add(this.panel1);
             this.Name = "CrearReporte";
             this.Text = "CrearReporte";
+            this.Load += new System.EventHandler(this.CrearReporte_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -236,5 +260,7 @@ namespace Liskong.FomReporte
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cbEstado;
+        private System.Windows.Forms.ComboBox cmbDepartamento;
+        private System.Windows.Forms.Label label5;
     }
 }

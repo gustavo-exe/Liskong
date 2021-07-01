@@ -38,10 +38,73 @@
           <Property Name="FechaDeNacimiento" Type="date" Nullable="false" />
           <Property Name="Telefono" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Name="IdReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Estado" Type="bit" />
+          <Property Name="FechaDeCreacion" Type="datetime" Nullable="false" />
+          <Property Name="Detalle" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Solucion" Type="varchar" MaxLength="300" />
+          <Property Name="FK_IdDepartamento" Type="int" Nullable="false" />
+          <Property Name="FK_IdEmpleado" Type="int" Nullable="false" />
+          <Property Name="FK_IdCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Reporte_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reporte_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reporte_Empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LiskongModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reporte" EntityType="Self.Reporte" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Reporte_Cliente" Association="Self.FK_Reporte_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Departamento" Association="Self.FK_Reporte_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Empleado" Association="Self.FK_Reporte_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -60,11 +123,25 @@
           <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FechaDeNacimiento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Telefono" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Reporte" Relationship="LiskongModel.FK_Reporte_Empleado" FromRole="Empleado" ToRole="Reporte" />
         </EntityType>
         <EntityContainer Name="LiskongEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="Cliente" EntityType="LiskongModel.Cliente" />
           <EntitySet Name="Departamento" EntityType="LiskongModel.Departamento" />
+          <EntitySet Name="Reporte" EntityType="LiskongModel.Reporte" />
+          <AssociationSet Name="FK_Reporte_Cliente" Association="LiskongModel.FK_Reporte_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Departamento" Association="LiskongModel.FK_Reporte_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reporte_Empleado" Association="LiskongModel.FK_Reporte_Empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -77,6 +154,7 @@
           <Property Name="Pais" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="Int32" Nullable="false" />
           <Property Name="Correo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reporte" Relationship="LiskongModel.FK_Reporte_Cliente" FromRole="Cliente" ToRole="Reporte" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
@@ -84,7 +162,61 @@
           </Key>
           <Property Name="IdDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reporte" Relationship="LiskongModel.FK_Reporte_Departamento" FromRole="Departamento" ToRole="Reporte" />
         </EntityType>
+        <EntityType Name="Reporte">
+          <Key>
+            <PropertyRef Name="IdReporte" />
+          </Key>
+          <Property Name="IdReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Boolean" />
+          <Property Name="FechaDeCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Solucion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="FK_IdDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="FK_IdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="FK_IdCliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="LiskongModel.FK_Reporte_Cliente" FromRole="Reporte" ToRole="Cliente" />
+          <NavigationProperty Name="Departamento" Relationship="LiskongModel.FK_Reporte_Departamento" FromRole="Reporte" ToRole="Departamento" />
+          <NavigationProperty Name="Empleado" Relationship="LiskongModel.FK_Reporte_Empleado" FromRole="Reporte" ToRole="Empleado" />
+        </EntityType>
+        <Association Name="FK_Reporte_Cliente">
+          <End Type="LiskongModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="LiskongModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="IdCliente" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reporte_Departamento">
+          <End Type="LiskongModel.Departamento" Role="Departamento" Multiplicity="1" />
+          <End Type="LiskongModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="IdDepartamento" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reporte_Empleado">
+          <End Type="LiskongModel.Empleado" Role="Empleado" Multiplicity="1" />
+          <End Type="LiskongModel.Reporte" Role="Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="IdEmpleado" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="FK_IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -124,6 +256,21 @@
               <MappingFragment StoreEntitySet="Departamento">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="IdDepartamento" ColumnName="IdDepartamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reporte">
+            <EntityTypeMapping TypeName="LiskongModel.Reporte">
+              <MappingFragment StoreEntitySet="Reporte">
+                <ScalarProperty Name="FK_IdCliente" ColumnName="FK_IdCliente" />
+                <ScalarProperty Name="FK_IdEmpleado" ColumnName="FK_IdEmpleado" />
+                <ScalarProperty Name="FK_IdDepartamento" ColumnName="FK_IdDepartamento" />
+                <ScalarProperty Name="Solucion" ColumnName="Solucion" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="FechaDeCreacion" ColumnName="FechaDeCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="IdReporte" ColumnName="IdReporte" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

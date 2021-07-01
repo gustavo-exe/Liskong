@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="LiskongModel.Empleado" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LiskongModel.Cliente" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="LiskongModel.Departamento" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LiskongModel.Reporte" Width="1.5" PointX="3.375" PointY="4.75" />
+        <AssociationConnector Association="LiskongModel.FK_Reporte_Cliente" />
+        <AssociationConnector Association="LiskongModel.FK_Reporte_Departamento" />
+        <AssociationConnector Association="LiskongModel.FK_Reporte_Empleado" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

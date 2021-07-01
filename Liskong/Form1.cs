@@ -18,12 +18,14 @@ namespace Liskong
     {
         LiskongEntities entity = new LiskongEntities();
         //Variables
+        int empleadoId = 0;
         string empleadoIdentidad = "";
         string empleadoNombre = "";
         string empleadoAppelido = "";
-        public Menu(string _numeroDeIdentidad, string _nombre, string _appelido)
+        public Menu(int _idEmpleado, string _numeroDeIdentidad, string _nombre, string _appelido)
         {
             InitializeComponent();
+            empleadoId = _idEmpleado;
             empleadoIdentidad = _numeroDeIdentidad;
             empleadoNombre = _nombre;
             empleadoAppelido = _appelido;
@@ -75,7 +77,7 @@ namespace Liskong
 
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CrearReporte ventana = new CrearReporte();
+            CrearReporte ventana = new CrearReporte(empleadoId);
             ventana.MdiParent = this;
             ventana.Show();
         }

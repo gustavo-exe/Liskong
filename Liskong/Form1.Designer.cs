@@ -163,7 +163,8 @@ namespace Liskong
             // 
             this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
             this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            this.visualizarToolStripMenuItem.Text = "Brindar solucion";
+            this.visualizarToolStripMenuItem.Click += new System.EventHandler(this.visualizarToolStripMenuItem_Click);
             // 
             // actulizarToolStripMenuItem
             // 

@@ -81,5 +81,12 @@ namespace Liskong
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SolucionRporte ventana = new SolucionRporte();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }

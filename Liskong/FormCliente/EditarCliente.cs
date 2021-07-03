@@ -143,5 +143,41 @@ namespace Liskong.FormCliente
 
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridCliente.RowCount > 0)
+            {
+                //Obtener nombre del elemento seleccionado
+                var rowCliente = entity.Cliente.FirstOrDefault(x => x.IdCliente == idCliente);
+                var clienteQueEliminara = rowCliente.NombreCompleto;
+
+                //Elementos para el MessageBox
+                string message = "¿Seguro que quiere eliminar " + clienteQueEliminara + "?";
+                string title = "Eliminar cliente";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        //Eliminar el departamento de la base de datos
+                        entity.Cliente.RemoveRange(entity.Cliente.Where(x => x.IdCliente == idCliente));
+                        entity.SaveChanges();
+                        SelectAll();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el cliente que desea eliminar.");
+            }
+        }
     }
 }

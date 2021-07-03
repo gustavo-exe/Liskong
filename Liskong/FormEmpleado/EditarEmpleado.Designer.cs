@@ -30,284 +30,57 @@ namespace Liskong.FormEmpleado
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancelarBasica = new System.Windows.Forms.Button();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.btnGuardarBasica = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNumeroDeIdentidad = new System.Windows.Forms.TextBox();
-            this.txtMes = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDia = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCancelarContacto = new System.Windows.Forms.Button();
-            this.btnGuardarContacto = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEditarPassword = new System.Windows.Forms.Button();
             this.btnCancelarPassword = new System.Windows.Forms.Button();
             this.btnGuardaPassword = new System.Windows.Forms.Button();
             this.txtPasswordAntigua = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPasswordNueva = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnEditarPassword = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEditarContacto = new System.Windows.Forms.Button();
+            this.btnCancelarContacto = new System.Windows.Forms.Button();
+            this.btnGuardarContacto = new System.Windows.Forms.Button();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditarBasica = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.btnCancelarBasica = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnGuardarBasica = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtNumeroDeIdentidad = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.txtMes = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(206, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 787);
+            this.panel1.Size = new System.Drawing.Size(455, 901);
             this.panel1.TabIndex = 22;
-            // 
-            // btnCancelarBasica
-            // 
-            this.btnCancelarBasica.Location = new System.Drawing.Point(250, 202);
-            this.btnCancelarBasica.Margin = new System.Windows.Forms.Padding(30);
-            this.btnCancelarBasica.Name = "btnCancelarBasica";
-            this.btnCancelarBasica.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarBasica.TabIndex = 22;
-            this.btnCancelarBasica.Text = "Cancelar";
-            this.btnCancelarBasica.UseVisualStyleBackColor = true;
-            this.btnCancelarBasica.Visible = false;
-            this.btnCancelarBasica.Click += new System.EventHandler(this.btnCancelarBasica_Click);
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(130, 204);
-            this.txtYear.MaxLength = 4;
-            this.txtYear.Name = "txtYear";
-            this.txtYear.ReadOnly = true;
-            this.txtYear.Size = new System.Drawing.Size(35, 20);
-            this.txtYear.TabIndex = 21;
-            this.txtYear.Text = "Año";
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(12, 152);
-            this.txtDireccion.MaxLength = 100;
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.ReadOnly = true;
-            this.txtDireccion.Size = new System.Drawing.Size(270, 75);
-            this.txtDireccion.TabIndex = 13;
-            // 
-            // btnGuardarBasica
-            // 
-            this.btnGuardarBasica.Location = new System.Drawing.Point(332, 202);
-            this.btnGuardarBasica.Margin = new System.Windows.Forms.Padding(30);
-            this.btnGuardarBasica.Name = "btnGuardarBasica";
-            this.btnGuardarBasica.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarBasica.TabIndex = 20;
-            this.btnGuardarBasica.Text = "Guardar";
-            this.btnGuardarBasica.UseVisualStyleBackColor = true;
-            this.btnGuardarBasica.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Numero de Identidad";
-            // 
-            // txtNumeroDeIdentidad
-            // 
-            this.txtNumeroDeIdentidad.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNumeroDeIdentidad.Location = new System.Drawing.Point(20, 45);
-            this.txtNumeroDeIdentidad.MaxLength = 13;
-            this.txtNumeroDeIdentidad.Name = "txtNumeroDeIdentidad";
-            this.txtNumeroDeIdentidad.ReadOnly = true;
-            this.txtNumeroDeIdentidad.Size = new System.Drawing.Size(273, 20);
-            this.txtNumeroDeIdentidad.TabIndex = 1;
-            // 
-            // txtMes
-            // 
-            this.txtMes.Location = new System.Drawing.Point(74, 204);
-            this.txtMes.MaxLength = 2;
-            this.txtMes.Name = "txtMes";
-            this.txtMes.ReadOnly = true;
-            this.txtMes.Size = new System.Drawing.Size(35, 20);
-            this.txtMes.TabIndex = 18;
-            this.txtMes.Text = "Mes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(9, 91);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 17;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(20, 127);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 75);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Numero de telefono";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(190, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Apellido";
-            // 
-            // txtDia
-            // 
-            this.txtDia.Location = new System.Drawing.Point(20, 204);
-            this.txtDia.MaxLength = 2;
-            this.txtDia.Name = "txtDia";
-            this.txtDia.ReadOnly = true;
-            this.txtDia.Size = new System.Drawing.Size(35, 20);
-            this.txtDia.TabIndex = 15;
-            this.txtDia.Text = "Dia";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(193, 127);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 5;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Fecha de nacimiento";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Correo";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(6, 40);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
-            this.txtCorreo.Size = new System.Drawing.Size(273, 20);
-            this.txtCorreo.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Direccion";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnEditarBasica);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.btnCancelarBasica);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnGuardarBasica);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtYear);
-            this.groupBox1.Controls.Add(this.txtNumeroDeIdentidad);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtDia);
-            this.groupBox1.Controls.Add(this.txtMes);
-            this.groupBox1.Location = new System.Drawing.Point(12, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 239);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información básica";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnEditarContacto);
-            this.groupBox2.Controls.Add(this.btnCancelarContacto);
-            this.groupBox2.Controls.Add(this.btnGuardarContacto);
-            this.groupBox2.Controls.Add(this.txtCorreo);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.txtDireccion);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(12, 492);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(420, 283);
-            this.groupBox2.TabIndex = 27;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Infromacion de contacto";
-            // 
-            // btnCancelarContacto
-            // 
-            this.btnCancelarContacto.Location = new System.Drawing.Point(250, 249);
-            this.btnCancelarContacto.Margin = new System.Windows.Forms.Padding(30);
-            this.btnCancelarContacto.Name = "btnCancelarContacto";
-            this.btnCancelarContacto.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarContacto.TabIndex = 24;
-            this.btnCancelarContacto.Text = "Cancelar";
-            this.btnCancelarContacto.UseVisualStyleBackColor = true;
-            this.btnCancelarContacto.Visible = false;
-            this.btnCancelarContacto.Click += new System.EventHandler(this.btnCancelarContacto_Click);
-            // 
-            // btnGuardarContacto
-            // 
-            this.btnGuardarContacto.Location = new System.Drawing.Point(332, 249);
-            this.btnGuardarContacto.Margin = new System.Windows.Forms.Padding(30);
-            this.btnGuardarContacto.Name = "btnGuardarContacto";
-            this.btnGuardarContacto.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarContacto.TabIndex = 23;
-            this.btnGuardarContacto.Text = "Guardar";
-            this.btnGuardarContacto.UseVisualStyleBackColor = true;
-            this.btnGuardarContacto.Click += new System.EventHandler(this.btnGuardarContacto_Click);
             // 
             // groupBox3
             // 
@@ -324,6 +97,17 @@ namespace Liskong.FormEmpleado
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contraseña";
+            // 
+            // btnEditarPassword
+            // 
+            this.btnEditarPassword.Location = new System.Drawing.Point(329, 91);
+            this.btnEditarPassword.Margin = new System.Windows.Forms.Padding(30);
+            this.btnEditarPassword.Name = "btnEditarPassword";
+            this.btnEditarPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarPassword.TabIndex = 25;
+            this.btnEditarPassword.Text = "Cambiar";
+            this.btnEditarPassword.UseVisualStyleBackColor = true;
+            this.btnEditarPassword.Click += new System.EventHandler(this.btnEditarPassword_Click);
             // 
             // btnCancelarPassword
             // 
@@ -382,16 +166,23 @@ namespace Liskong.FormEmpleado
             this.label6.TabIndex = 16;
             this.label6.Text = "Nueva";
             // 
-            // btnEditarPassword
+            // groupBox2
             // 
-            this.btnEditarPassword.Location = new System.Drawing.Point(329, 91);
-            this.btnEditarPassword.Margin = new System.Windows.Forms.Padding(30);
-            this.btnEditarPassword.Name = "btnEditarPassword";
-            this.btnEditarPassword.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarPassword.TabIndex = 25;
-            this.btnEditarPassword.Text = "Cambiar";
-            this.btnEditarPassword.UseVisualStyleBackColor = true;
-            this.btnEditarPassword.Click += new System.EventHandler(this.btnEditarPassword_Click);
+            this.groupBox2.Controls.Add(this.btnEditarContacto);
+            this.groupBox2.Controls.Add(this.btnCancelarContacto);
+            this.groupBox2.Controls.Add(this.btnGuardarContacto);
+            this.groupBox2.Controls.Add(this.txtCorreo);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtTelefono);
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(12, 492);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(420, 283);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Infromacion de contacto";
             // 
             // btnEditarContacto
             // 
@@ -404,6 +195,104 @@ namespace Liskong.FormEmpleado
             this.btnEditarContacto.UseVisualStyleBackColor = true;
             this.btnEditarContacto.Click += new System.EventHandler(this.btnEditarContacto_Click);
             // 
+            // btnCancelarContacto
+            // 
+            this.btnCancelarContacto.Location = new System.Drawing.Point(250, 249);
+            this.btnCancelarContacto.Margin = new System.Windows.Forms.Padding(30);
+            this.btnCancelarContacto.Name = "btnCancelarContacto";
+            this.btnCancelarContacto.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarContacto.TabIndex = 24;
+            this.btnCancelarContacto.Text = "Cancelar";
+            this.btnCancelarContacto.UseVisualStyleBackColor = true;
+            this.btnCancelarContacto.Visible = false;
+            this.btnCancelarContacto.Click += new System.EventHandler(this.btnCancelarContacto_Click);
+            // 
+            // btnGuardarContacto
+            // 
+            this.btnGuardarContacto.Location = new System.Drawing.Point(332, 249);
+            this.btnGuardarContacto.Margin = new System.Windows.Forms.Padding(30);
+            this.btnGuardarContacto.Name = "btnGuardarContacto";
+            this.btnGuardarContacto.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarContacto.TabIndex = 23;
+            this.btnGuardarContacto.Text = "Guardar";
+            this.btnGuardarContacto.UseVisualStyleBackColor = true;
+            this.btnGuardarContacto.Click += new System.EventHandler(this.btnGuardarContacto_Click);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(6, 40);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = true;
+            this.txtCorreo.Size = new System.Drawing.Size(273, 20);
+            this.txtCorreo.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Correo";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(9, 91);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 17;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(12, 152);
+            this.txtDireccion.MaxLength = 100;
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
+            this.txtDireccion.Size = new System.Drawing.Size(270, 75);
+            this.txtDireccion.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 75);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Numero de telefono";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 136);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Direccion";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnEditarBasica);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.btnCancelarBasica);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnGuardarBasica);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtYear);
+            this.groupBox1.Controls.Add(this.txtNumeroDeIdentidad);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtDia);
+            this.groupBox1.Controls.Add(this.txtMes);
+            this.groupBox1.Location = new System.Drawing.Point(12, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(420, 239);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Información básica";
+            // 
             // btnEditarBasica
             // 
             this.btnEditarBasica.Location = new System.Drawing.Point(332, 201);
@@ -414,6 +303,141 @@ namespace Liskong.FormEmpleado
             this.btnEditarBasica.Text = "Editar";
             this.btnEditarBasica.UseVisualStyleBackColor = true;
             this.btnEditarBasica.Click += new System.EventHandler(this.btnEditarBasica_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Numero de Identidad";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(193, 127);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 5;
+            // 
+            // btnCancelarBasica
+            // 
+            this.btnCancelarBasica.Location = new System.Drawing.Point(250, 202);
+            this.btnCancelarBasica.Margin = new System.Windows.Forms.Padding(30);
+            this.btnCancelarBasica.Name = "btnCancelarBasica";
+            this.btnCancelarBasica.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarBasica.TabIndex = 22;
+            this.btnCancelarBasica.Text = "Cancelar";
+            this.btnCancelarBasica.UseVisualStyleBackColor = true;
+            this.btnCancelarBasica.Visible = false;
+            this.btnCancelarBasica.Click += new System.EventHandler(this.btnCancelarBasica_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(190, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Apellido";
+            // 
+            // btnGuardarBasica
+            // 
+            this.btnGuardarBasica.Location = new System.Drawing.Point(332, 202);
+            this.btnGuardarBasica.Margin = new System.Windows.Forms.Padding(30);
+            this.btnGuardarBasica.Name = "btnGuardarBasica";
+            this.btnGuardarBasica.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarBasica.TabIndex = 20;
+            this.btnGuardarBasica.Text = "Guardar";
+            this.btnGuardarBasica.UseVisualStyleBackColor = true;
+            this.btnGuardarBasica.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(20, 127);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Nombre";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(130, 204);
+            this.txtYear.MaxLength = 4;
+            this.txtYear.Name = "txtYear";
+            this.txtYear.ReadOnly = true;
+            this.txtYear.Size = new System.Drawing.Size(35, 20);
+            this.txtYear.TabIndex = 21;
+            this.txtYear.Text = "Año";
+            // 
+            // txtNumeroDeIdentidad
+            // 
+            this.txtNumeroDeIdentidad.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNumeroDeIdentidad.Location = new System.Drawing.Point(20, 45);
+            this.txtNumeroDeIdentidad.MaxLength = 13;
+            this.txtNumeroDeIdentidad.Name = "txtNumeroDeIdentidad";
+            this.txtNumeroDeIdentidad.ReadOnly = true;
+            this.txtNumeroDeIdentidad.Size = new System.Drawing.Size(273, 20);
+            this.txtNumeroDeIdentidad.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 168);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Fecha de nacimiento";
+            // 
+            // txtDia
+            // 
+            this.txtDia.Location = new System.Drawing.Point(20, 204);
+            this.txtDia.MaxLength = 2;
+            this.txtDia.Name = "txtDia";
+            this.txtDia.ReadOnly = true;
+            this.txtDia.Size = new System.Drawing.Size(35, 20);
+            this.txtDia.TabIndex = 15;
+            this.txtDia.Text = "Dia";
+            // 
+            // txtMes
+            // 
+            this.txtMes.Location = new System.Drawing.Point(74, 204);
+            this.txtMes.MaxLength = 2;
+            this.txtMes.Name = "txtMes";
+            this.txtMes.ReadOnly = true;
+            this.txtMes.Size = new System.Drawing.Size(35, 20);
+            this.txtMes.TabIndex = 18;
+            this.txtMes.Text = "Mes";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Location = new System.Drawing.Point(18, 797);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(414, 92);
+            this.groupBox4.TabIndex = 29;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Eliminar mi cuenta";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(395, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Quiero eliminar mi cuenta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EditarEmpleado
             // 
@@ -426,12 +450,13 @@ namespace Liskong.FormEmpleado
             this.Text = "Editar mis datos";
             this.Load += new System.EventHandler(this.EditarEmpleado_Load);
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -471,5 +496,7 @@ namespace Liskong.FormEmpleado
         private System.Windows.Forms.Button btnCancelarContacto;
         private System.Windows.Forms.Button btnGuardarContacto;
         private System.Windows.Forms.Button btnEditarBasica;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button1;
     }
 }

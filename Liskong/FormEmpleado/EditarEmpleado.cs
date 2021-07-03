@@ -196,5 +196,10 @@ namespace Liskong.FormEmpleado
             btnEditarPassword.Visible = true;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EliminarEmpleado ventana = new EliminarEmpleado(empleadoIdentidad);
+            ventana.Show();
+        }
     }
 }

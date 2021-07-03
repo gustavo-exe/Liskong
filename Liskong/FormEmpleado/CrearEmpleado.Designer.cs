@@ -247,7 +247,7 @@ namespace Liskong.FormEmpleado
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(830, 525);
+            this.ClientSize = new System.Drawing.Size(404, 525);
             this.Controls.Add(this.panel1);
             this.Name = "CrearEmpleado";
             this.Text = "CrearEmpleado";

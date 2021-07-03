@@ -130,6 +130,12 @@
     <Compile Include="FormEmpleado\EditarEmpleado.Designer.cs">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEmpleado\EliminarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleado\EliminarEmpleado.Designer.cs">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmpleado\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleado\EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleado\EliminarEmpleado.resx">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmpleado\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

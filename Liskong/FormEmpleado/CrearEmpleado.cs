@@ -117,8 +117,12 @@ namespace Liskong.FormEmpleado
                 txtNumeroDeIdentidad.Text = txtNombre.Text = txtApellido.Text = txtCorreo.Text = txtPassword.Text =
                 txtDireccion.Text = txtDia.Text = txtMes.Text = txtYear.Text = txtTelefono.Text = string.Empty;
 
-                MessageBox.Show("Se guardaron los datos.");
+                MessageBox.Show("Se creo el usuario ahora tienen que inciar sesion.");
 
+                //Formulario del login
+                Login login = new Login();
+                this.Dispose();
+                login.Show();
 
             }
             catch (Exception ex)

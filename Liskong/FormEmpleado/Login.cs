@@ -1,4 +1,5 @@
-﻿using pryStreaingUnicah.Clases;
+﻿using Liskong.FormEmpleado;
+using pryStreaingUnicah.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +49,13 @@ namespace Liskong
                 this.Hide();
                 formMenu.Show();
             }
+        }
+
+        private void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            CrearEmpleado formEmpleado = new CrearEmpleado();
+            this.Hide();
+            formEmpleado.Show();
         }
     }
 }

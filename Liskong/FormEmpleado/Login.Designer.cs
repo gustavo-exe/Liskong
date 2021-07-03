@@ -34,6 +34,7 @@ namespace Liskong
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEntrar
@@ -81,11 +82,22 @@ namespace Liskong
             this.label1.TabIndex = 15;
             this.label1.Text = "Numero de identidad";
             // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.Location = new System.Drawing.Point(77, 227);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(108, 23);
+            this.btnCrearCuenta.TabIndex = 20;
+            this.btnCrearCuenta.Text = "Crear una cuenta";
+            this.btnCrearCuenta.UseVisualStyleBackColor = true;
+            this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 234);
+            this.ClientSize = new System.Drawing.Size(254, 272);
+            this.Controls.Add(this.btnCrearCuenta);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -105,5 +117,6 @@ namespace Liskong
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCrearCuenta;
     }
 }

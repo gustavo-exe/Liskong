@@ -14,6 +14,7 @@ namespace Liskong.FormEmpleado
     public partial class CrearEmpleado : Form
     {
         LiskongEntities entity = new LiskongEntities();
+        Empleado tablaEmpleado = new Empleado();
         public CrearEmpleado()
         {
             InitializeComponent();
@@ -94,12 +95,12 @@ namespace Liskong.FormEmpleado
             try
             {
                 //Preparar parametros
-                Empleado tablaEmpleado = new Empleado();
                 tablaEmpleado.NumeroDeIdentidad = txtNumeroDeIdentidad.Text;
                 tablaEmpleado.Nombre = txtNombre.Text;
                 tablaEmpleado.Apellido = txtApellido.Text;
                 tablaEmpleado.Correo = txtCorreo.Text;
 
+                MessageBox.Show(txtNumeroDeIdentidad.Text);
                 //Encriptacion
                 Hash hash = new Hash();
                 tablaEmpleado.Password = hash.obtenerHash256(txtPassword.Text);
@@ -127,9 +128,19 @@ namespace Liskong.FormEmpleado
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                //Eliminacion de la clase que genero el problema
+                entity.Empleado.Remove(tablaEmpleado);
+                //Detalles completos de la excepcion
+                MessageBox.Show(ex.InnerException.ToString());
+                
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Dispose();
+            login.Show();
         }
     }
 }

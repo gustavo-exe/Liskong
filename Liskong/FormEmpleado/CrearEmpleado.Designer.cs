@@ -49,6 +49,7 @@ namespace Liskong.FormEmpleado
             this.btnCrear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtYear = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,6 +210,7 @@ namespace Liskong.FormEmpleado
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.txtYear);
             this.panel1.Controls.Add(this.txtDireccion);
             this.panel1.Controls.Add(this.btnCrear);
@@ -242,12 +244,23 @@ namespace Liskong.FormEmpleado
             this.txtYear.TabIndex = 21;
             this.txtYear.Text = "Año";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(126, 527);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(30);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // CrearEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(404, 525);
+            this.ClientSize = new System.Drawing.Size(421, 525);
             this.Controls.Add(this.panel1);
             this.Name = "CrearEmpleado";
             this.Text = "CrearEmpleado";
@@ -280,5 +293,6 @@ namespace Liskong.FormEmpleado
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -100,7 +100,6 @@ namespace Liskong.FormEmpleado
                 tablaEmpleado.Apellido = txtApellido.Text;
                 tablaEmpleado.Correo = txtCorreo.Text;
 
-                MessageBox.Show(txtNumeroDeIdentidad.Text);
                 //Encriptacion
                 Hash hash = new Hash();
                 tablaEmpleado.Password = hash.obtenerHash256(txtPassword.Text);
@@ -118,7 +117,7 @@ namespace Liskong.FormEmpleado
                 txtNumeroDeIdentidad.Text = txtNombre.Text = txtApellido.Text = txtCorreo.Text = txtPassword.Text =
                 txtDireccion.Text = txtDia.Text = txtMes.Text = txtYear.Text = txtTelefono.Text = string.Empty;
 
-                MessageBox.Show("Se creo el usuario ahora tienen que inciar sesion.");
+                MessageBox.Show("Se creo el usuario, ahora tiene que iniciar sesion.");
 
                 //Formulario del login
                 Login login = new Login();
@@ -141,6 +140,21 @@ namespace Liskong.FormEmpleado
             Login login = new Login();
             this.Dispose();
             login.Show();
+        }
+
+        private void txtYear_Click(object sender, EventArgs e)
+        {
+            txtYear.Text = string.Empty;
+        }
+
+        private void txtDia_Click(object sender, EventArgs e)
+        {
+            txtDia.Text = string.Empty;
+        }
+
+        private void txtMes_Click(object sender, EventArgs e)
+        {
+            txtMes.Text = string.Empty;
         }
     }
 }

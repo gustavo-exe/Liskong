@@ -31,16 +31,6 @@ namespace Liskong
             empleadoAppelido = _appelido;
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Menu_Load(object sender, EventArgs e)
         {
             lblApellido.Text = empleadoAppelido;
@@ -68,7 +58,7 @@ namespace Liskong
             ventana.Show();
         }
 
-        private void crearToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void departamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CRUDDepartamento ventana = new CRUDDepartamento();
             ventana.MdiParent = this;
@@ -87,6 +77,41 @@ namespace Liskong
             SolucionRporte ventana = new SolucionRporte();
             ventana.MdiParent = this;
             ventana.Show();
+        }
+
+        private void departamentoToolStripMenuItem_DropDownOpened_1(object sender, EventArgs e)
+        {
+            departamentoToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void departamentoToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            departamentoToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void reporteToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            reporteToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void reporteToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            reporteToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void clienteToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            clienteToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void clienteToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            clienteToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void actulizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -75,13 +75,15 @@ namespace Liskong.FormDepartamento
                 }
             }
             //Estados de los componentes
-            btnCancelar.Visible = editar = false;
+            btnCancelar.Visible = false;
+            editar = false;
             btnNuevo.Visible = true;
             txtNombre.ReadOnly = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            btnCancelar.Visible = false;
             txtNombre.Text = string.Empty;
             txtNombre.ReadOnly = btnNuevo.Visible = true;
         }

@@ -83,5 +83,12 @@ namespace Liskong.FormCliente
                 throw;
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNumeroDeIdentidad.Text = txtNombreCompleto.Text = txtCiudad.Text =
+            txtPais.Text = txtTelefono.Text = txtCorreo.Text = string.Empty;
+
+        }
     }
 }

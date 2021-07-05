@@ -56,6 +56,9 @@ namespace Liskong.FormEmpleado
             txtNumeroDeIdentidad.ReadOnly =  txtNombre.ReadOnly = txtApellido.ReadOnly =
             txtDia.ReadOnly =  txtMes.ReadOnly = txtYear.ReadOnly = false;
 
+            panel2.BackColor = panel3.BackColor = panel4.BackColor = panel5.BackColor =
+            panel6.BackColor = panel7.BackColor = Color.Black;
+
             btnCancelarBasica.Visible = true;
             btnEditarBasica.Visible = false;
         }
@@ -64,7 +67,10 @@ namespace Liskong.FormEmpleado
             SelectAll();
             txtNumeroDeIdentidad.ReadOnly = txtNombre.ReadOnly = txtApellido.ReadOnly =
             txtDia.ReadOnly = txtMes.ReadOnly = txtYear.ReadOnly = true;
-
+            
+            panel2.BackColor = panel3.BackColor = panel4.BackColor = panel5.BackColor =
+            panel6.BackColor = panel7.BackColor = Color.DarkGray;
+            
             btnCancelarBasica.Visible = false;
             btnEditarBasica.Visible = true;
         }
@@ -91,6 +97,8 @@ namespace Liskong.FormEmpleado
                 txtDia.ReadOnly = txtMes.ReadOnly = txtYear.ReadOnly = true;
                 btnCancelarBasica.Visible = false;
                 btnEditarBasica.Visible = true;
+                panel2.BackColor = panel3.BackColor = panel7.BackColor = panel4.BackColor = panel5.BackColor =
+                panel6.BackColor = Color.DarkGray;
             }
             catch (Exception ex)
             {
@@ -103,7 +111,7 @@ namespace Liskong.FormEmpleado
         private void btnEditarContacto_Click(object sender, EventArgs e)
         {
             txtCorreo.ReadOnly = txtTelefono.ReadOnly = txtDireccion.ReadOnly = false;
-
+            panel10.BackColor = panel11.BackColor = txtDireccion.ForeColor = Color.Black;
             btnCancelarContacto.Visible = true;
             btnEditarContacto.Visible = false;
         }
@@ -125,6 +133,7 @@ namespace Liskong.FormEmpleado
                 txtCorreo.ReadOnly = txtTelefono.ReadOnly = txtDireccion.ReadOnly = true;
                 btnCancelarContacto.Visible = false;
                 btnEditarContacto.Visible = true;
+                panel10.BackColor = panel11.BackColor = txtDireccion.ForeColor = Color.DarkGray;
 
             }
             catch (Exception ex)
@@ -135,6 +144,7 @@ namespace Liskong.FormEmpleado
         private void btnCancelarContacto_Click(object sender, EventArgs e)
         {
             SelectAll();
+            panel10.BackColor = panel11.BackColor = txtDireccion.ForeColor = Color.DarkGray;
             txtCorreo.ReadOnly = txtTelefono.ReadOnly = txtDireccion.ReadOnly = true;
             btnCancelarContacto.Visible = false;
             btnEditarContacto.Visible = true;
@@ -146,6 +156,8 @@ namespace Liskong.FormEmpleado
             txtPasswordAntigua.ReadOnly = txtPasswordNueva.ReadOnly = false;
             btnCancelarPassword.Visible = true;
             btnEditarPassword.Visible = false;
+
+            panel9.BackColor = panel8.BackColor =  Color.Black;
         }
 
         private void btnGuardaPassword_Click(object sender, EventArgs e)
@@ -180,6 +192,7 @@ namespace Liskong.FormEmpleado
                 txtPasswordAntigua.Text = txtPasswordNueva.Text = String.Empty;
                 btnCancelarPassword.Visible = false;
                 btnEditarPassword.Visible = true;
+                panel9.BackColor = panel8.BackColor = Color.DarkGray;
             }
             catch (Exception ex)
             {
@@ -194,12 +207,28 @@ namespace Liskong.FormEmpleado
             txtPasswordAntigua.Text = txtPasswordNueva.Text = String.Empty;
             btnCancelarPassword.Visible = false;
             btnEditarPassword.Visible = true;
+            panel9.BackColor = panel8.BackColor = Color.DarkGray;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             EliminarEmpleado ventana = new EliminarEmpleado(empleadoIdentidad);
             ventana.Show();
+        }
+
+        private void txtDia_Click(object sender, EventArgs e)
+        {
+            txtDia.Text = string.Empty;
+        }
+
+        private void txtMes_Click(object sender, EventArgs e)
+        {
+            txtMes.Text = string.Empty;
+        }
+
+        private void txtYear_Click(object sender, EventArgs e)
+        {
+            txtYear.Text = string.Empty;
         }
     }
 }

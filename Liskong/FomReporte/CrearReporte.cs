@@ -26,7 +26,11 @@ namespace Liskong.FomReporte
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            if (txtNumeroDeIdentidad.Text == string.Empty)
+            {
+                MessageBox.Show("Colocoque el numero de identidad del cliente.");
+                return;
+            }
             try
             {
                 //Llenado del data grid dependiendo del numero de identidad
@@ -55,7 +59,6 @@ namespace Liskong.FomReporte
 
         private void CrearReporte_Load(object sender, EventArgs e)
         {
-            cmbDepartamento.SelectedIndex = -1;
             //Llenado del combobox con los departamentos disponibles
             var tablaDepartamento = from p in entity.Departamento
                                     select new
@@ -67,9 +70,26 @@ namespace Liskong.FomReporte
             cmbDepartamento.DataSource = dataTableDepartamento;
             cmbDepartamento.ValueMember = dataTableDepartamento.Columns[0].ColumnName;
             cmbDepartamento.DisplayMember = dataTableDepartamento.Columns[1].ColumnName;
+            
+            cmbDepartamento.SelectedIndex = -1;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (cmbDepartamento.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione un departamento.");
+                return;
+            }
+            if (cmbTipo.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione un Tipo.");
+                return;
+            }
+            if (txtDetalle.Text == string.Empty)
+            {
+                MessageBox.Show("Estan vacios los detalles.");
+                return;
+            }
             if (dataGridCliente.SelectedRows.Count > 0)
             {
                 idCliente = Convert.ToInt32(dataGridCliente.SelectedCells[0].Value);
@@ -86,7 +106,7 @@ namespace Liskong.FomReporte
                 //Guardado
                 entity.Reporte.Add(tablaReporte);
                 entity.SaveChanges();
-
+                MessageBox.Show("Se guardo el reporte.");
                 //Limpieza de parametros
                 txtDetalle.Text = txtNumeroDeIdentidad.Text = string.Empty;
                 cmbDepartamento.SelectedIndex = cmbTipo.SelectedIndex = -1;

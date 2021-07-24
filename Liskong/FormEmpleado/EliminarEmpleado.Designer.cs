@@ -117,7 +117,6 @@ namespace Liskong.FormEmpleado
             this.Name = "EliminarEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar mi cuenta";
-            this.Load += new System.EventHandler(this.EliminarEmpleado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

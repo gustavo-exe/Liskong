@@ -79,8 +79,9 @@ namespace Liskong.FormCliente
                     editar = true; 
                     
                 }
-                catch (Exception )
+                catch (Exception ex)
                 {
+                    //MessageBox.Show(ex.InnerException.ToString());
                 }
             }
         }
@@ -89,6 +90,46 @@ namespace Liskong.FormCliente
         {
             if (editar)
             {
+                //Comprobacion de Campos vacion
+                if (txtNumeroDeIdentidad.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campos de la identidad vacio");
+                    return;
+                }
+                if (txtNombreCompleto.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campo del Nombre vacio");
+
+                    return;
+                }
+                if (txtCiudad.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campo de la ciudad vacio");
+                    return;
+                }
+                if (txtPais.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campo del pais vacio");
+
+                    return;
+                }
+                if (txtCorreo.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campo del correo vacio");
+
+                    return;
+                }
+                if (txtTelefono.Text == string.Empty)
+                {
+                    MessageBox.Show(" Campo del telefono vacio");
+                    return;
+                }
+                if (!txtTelefono.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("El numero de telefono contiene caracteres no validos.");
+                    return;
+                }
+
                 var rowCliente = entity.Cliente.FirstOrDefault(x => x.IdCliente == idCliente);
                 rowCliente.NumeroDeIdentidad = txtNumeroDeIdentidad.Text;
                 rowCliente.NombreCompleto = txtNombreCompleto.Text;
@@ -98,36 +139,8 @@ namespace Liskong.FormCliente
                 rowCliente.Correo = txtCorreo.Text;
 
                 entity.SaveChanges();
-            }
-            else
-            {
-                //Insertar la informacion
-                try
-                {
-                    //Preparacion de parametros
-                    Cliente tablaCliente = new Cliente();
-                    tablaCliente.NumeroDeIdentidad = txtNumeroDeIdentidad.Text;
-                    tablaCliente.NombreCompleto = txtNombreCompleto.Text;
-                    tablaCliente.Ciudad = txtCiudad.Text;
-                    tablaCliente.Pais = txtPais.Text;
-                    tablaCliente.Telefono = Convert.ToInt32(txtTelefono.Text);
-                    tablaCliente.Correo = txtCorreo.Text;
 
-                    //Guardar cambios
-                    entity.Cliente.Add(tablaCliente);
-                    entity.SaveChanges();
-
-                    //Limpieza de campos
-                    txtNumeroDeIdentidad.Text = txtNombreCompleto.Text = txtCiudad.Text =
-                    txtPais.Text = txtTelefono.Text = txtCorreo.Text = string.Empty;
-
-                    MessageBox.Show("Se guardaron los datos del cliente.");
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Se guardaron los datos");
             }
 
             txtNumeroDeIdentidad.ReadOnly = txtNombreCompleto.ReadOnly = txtCiudad.ReadOnly =

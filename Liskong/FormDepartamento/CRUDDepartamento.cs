@@ -38,11 +38,10 @@ namespace Liskong.FormDepartamento
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = btnNuevo.Visible = false;
-            btnCancelar.Visible = true;
+            btnCancelar.Visible = txtNombre.Enabled = true;
             dataGridDepartamento.ClearSelection();
             editar = false;
             txtNombre.Text = string.Empty;
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -75,17 +74,17 @@ namespace Liskong.FormDepartamento
                 }
             }
             //Estados de los componentes
-            btnCancelar.Visible = false;
+            btnCancelar.Visible = txtNombre.Enabled = false;
             editar = false;
             btnNuevo.Visible = true;
-            txtNombre.ReadOnly = true;
+            txtNombre.ReadOnly  = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            btnCancelar.Visible = false;
+            txtNombre.Enabled = btnCancelar.Visible = false;
             txtNombre.Text = string.Empty;
-            txtNombre.ReadOnly = btnNuevo.Visible = true;
+            txtNombre.ReadOnly =  btnNuevo.Visible = true;
         }
 
         private void dataGridDepartamento_SelectionChanged(object sender, EventArgs e)
@@ -100,10 +99,9 @@ namespace Liskong.FormDepartamento
                     txtNombre.Text = rowDepartamento.Nombre;
                     editar = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    //throw;
+                    //MessageBox.Show(ex.InnerException.ToString());
                 }
             }
         }
@@ -111,8 +109,7 @@ namespace Liskong.FormDepartamento
         private void btnEditar_Click(object sender, EventArgs e)
         {
             btnNuevo.Visible = txtNombre.ReadOnly = false;
-            btnCancelar.Visible = true;
-            
+            txtNombre.Enabled = btnCancelar.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,7 +136,6 @@ namespace Liskong.FormDepartamento
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
             }

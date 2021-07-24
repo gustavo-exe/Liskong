@@ -406,13 +406,12 @@ namespace Liskong.FormEmpleado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1029, 500);
+            this.ClientSize = new System.Drawing.Size(1046, 500);
             this.Controls.Add(this.panel11);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo empleado";
-            this.Load += new System.EventHandler(this.CrearEmpleado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);

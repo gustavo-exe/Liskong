@@ -186,6 +186,7 @@ namespace Liskong.FormDepartamento
             // 
             this.txtNombre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(35, 74);
             this.txtNombre.MaxLength = 20;

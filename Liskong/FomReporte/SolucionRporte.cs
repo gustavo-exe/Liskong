@@ -59,13 +59,27 @@ namespace Liskong.FomReporte
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if(listDepartamento.SelectedIndex == 0)
+            {
+                MessageBox.Show("Seleccione un departamento de la lista.");
+                return;
+            }
+            if (!checkBox1.Checked)
+            {
+                MessageBox.Show("Marque la casilla del estado de la solucion.");
+                return;
+            }
+            if (textBox1.Text ==string.Empty)
+            {
+                MessageBox.Show("Los detalles de la solucion no pueden ir vacios.");
+                return;
+            }
             if(dataGridReporte.SelectedRows.Count > 0)
             {
                 try
                 {
                     //Actulizacion del reporte
                     idReporte = Convert.ToInt32(dataGridReporte.SelectedCells[0].Value);
-                    MessageBox.Show(idReporte.ToString());
                     var tablaReporte = (from p in entity.Reporte
                                         where p.IdReporte == idReporte
                                         select p).FirstOrDefault();
@@ -75,13 +89,14 @@ namespace Liskong.FomReporte
 
                     entity.SaveChanges();
                     SelectAllReporte();
-                    MessageBox.Show("Los datos se actulizaron.");
+                    LimpiezaDeCampos();
+                    MessageBox.Show("Los datos se actualizaron.");
 
                 }
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.InnerException.ToString());
                 }
             }
             else
@@ -91,6 +106,10 @@ namespace Liskong.FomReporte
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiezaDeCampos();
+        }
+        private void LimpiezaDeCampos()
         {
             textBox1.Text = string.Empty;
             checkBox1.Checked = false;

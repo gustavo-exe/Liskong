@@ -99,6 +99,7 @@ namespace Liskong.FomReporte
             // 
             // cmbDepartamento
             // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamento.FormattingEnabled = true;
             this.cmbDepartamento.Location = new System.Drawing.Point(397, 31);
@@ -176,6 +177,7 @@ namespace Liskong.FomReporte
             // 
             // cmbTipo
             // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
@@ -297,7 +299,7 @@ namespace Liskong.FomReporte
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrearReporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CrearReporte";
+            this.Text = "Crear reporte";
             this.Load += new System.EventHandler(this.CrearReporte_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

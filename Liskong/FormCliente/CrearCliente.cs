@@ -13,6 +13,7 @@ namespace Liskong.FormCliente
     public partial class CrearCliente : Form
     {
         LiskongEntities entity = new LiskongEntities();
+        Cliente tablaCliente = new Cliente();
         public CrearCliente()
         {
             InitializeComponent();
@@ -55,11 +56,15 @@ namespace Liskong.FormCliente
                 MessageBox.Show(" Campo del telefono vacio");
                 return;
             }
+            if (!txtTelefono.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El numero de telefono contiene caracteres no validos.");
+                return;
+            }
 
             try
             {
                 //Preparacion de parametros
-                Cliente tablaCliente = new Cliente();
                 tablaCliente.NumeroDeIdentidad = txtNumeroDeIdentidad.Text;
                 tablaCliente.NombreCompleto = txtNombreCompleto.Text;
                 tablaCliente.Ciudad = txtCiudad.Text;
@@ -77,10 +82,10 @@ namespace Liskong.FormCliente
 
                 MessageBox.Show("Se guardaron los datos del cliente.");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                entity.Cliente.Remove(tablaCliente);
+                MessageBox.Show(ex.InnerException.ToString());
             }
         }
 

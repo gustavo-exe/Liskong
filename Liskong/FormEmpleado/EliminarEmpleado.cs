@@ -20,11 +20,6 @@ namespace Liskong.FormEmpleado
             empleadoIdentidad = _identidadEmpleado;
         }
 
-        private void EliminarEmpleado_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelarPassword_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -33,7 +28,6 @@ namespace Liskong.FormEmpleado
         private void btnGuardaPassword_Click(object sender, EventArgs e)
         {
             //Obtener nombre del elemento seleccionado
-            //var rowEmpleado = entity.Empleado.FirstOrDefault(x => x.NumeroDeIdentidad == empleadoIdentidad);
             try
             {
                 //Eliminar el departamento de la base de datos
@@ -66,8 +60,7 @@ namespace Liskong.FormEmpleado
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.ToString());
             }
             
         }

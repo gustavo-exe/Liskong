@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -90,6 +91,11 @@ namespace Liskong.FormEmpleado
                 MessageBox.Show(" Campo del telefono vacio");
                 return;
             }
+            if (!txtTelefono.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El numero de telefono contiene caracteres no validos.");
+                return;
+            }
 
             //Inserccion de datos
             try
@@ -127,12 +133,13 @@ namespace Liskong.FormEmpleado
             }
             catch (Exception ex)
             {
-                //Eliminacion de la clase que genero el problema
+                //Eliminacion de la clase que genero el problema de
+                //manejo de las innerexception
                 entity.Empleado.Remove(tablaEmpleado);
                 //Detalles completos de la excepcion
-                MessageBox.Show(ex.InnerException.ToString());
-                
+                MessageBox.Show(ex.InnerException.ToString());  
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

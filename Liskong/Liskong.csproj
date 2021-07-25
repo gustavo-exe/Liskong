@@ -222,6 +222,7 @@
       <DependentUpon>EntityDataModel.edmx</DependentUpon>
       <LastGenOutput>EntityDataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-tarjeta-de-empleado-50%281%29.png" />
     <None Include="Resources\icons8-búsqueda-24.png" />
     <None Include="Resources\icons8-salida-30.png" />
     <None Include="Resources\icons8-carpeta-de-usuario-24%281%29.png" />

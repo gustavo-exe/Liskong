@@ -46,10 +46,11 @@ namespace Liskong
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCambiarDatos = new System.Windows.Forms.Button();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCambiarDatos = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
             panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -60,6 +61,7 @@ namespace Liskong
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,20 +159,21 @@ namespace Liskong
             // crearToolStripMenuItem1
             // 
             this.crearToolStripMenuItem1.Name = "crearToolStripMenuItem1";
-            this.crearToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.crearToolStripMenuItem1.Size = new System.Drawing.Size(117, 24);
             this.crearToolStripMenuItem1.Text = "Crear";
             this.crearToolStripMenuItem1.Click += new System.EventHandler(this.crearToolStripMenuItem1_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // menuStrip4
             // 
             this.menuStrip4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(87)))), ((int)(((byte)(22)))));
+            this.menuStrip4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuStrip4.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.departamentoToolStripMenuItem});
@@ -223,6 +226,7 @@ namespace Liskong
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnCambiarDatos);
             this.panel2.Controls.Add(this.lblApellido);
@@ -232,45 +236,11 @@ namespace Liskong
             this.panel2.Size = new System.Drawing.Size(142, 245);
             this.panel2.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(87)))), ((int)(((byte)(22)))));
-            this.button1.Image = global::Liskong.Properties.Resources.icons8_salida_30;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 39);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Salir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnCambiarDatos
-            // 
-            this.btnCambiarDatos.FlatAppearance.BorderSize = 0;
-            this.btnCambiarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(87)))), ((int)(((byte)(22)))));
-            this.btnCambiarDatos.Image = global::Liskong.Properties.Resources.icons8_carpeta_de_usuario_24_1_;
-            this.btnCambiarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambiarDatos.Location = new System.Drawing.Point(6, 81);
-            this.btnCambiarDatos.Name = "btnCambiarDatos";
-            this.btnCambiarDatos.Size = new System.Drawing.Size(127, 29);
-            this.btnCambiarDatos.TabIndex = 2;
-            this.btnCambiarDatos.Text = "Cambiar mis datos";
-            this.btnCambiarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCambiarDatos.UseVisualStyleBackColor = true;
-            this.btnCambiarDatos.Click += new System.EventHandler(this.btnCambiarDatos_Click);
-            // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(9, 43);
+            this.lblApellido.Location = new System.Drawing.Point(62, 47);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(67, 18);
             this.lblApellido.TabIndex = 1;
@@ -280,11 +250,57 @@ namespace Liskong
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(9, 17);
+            this.lblNombre.Location = new System.Drawing.Point(65, 15);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 18);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Liskong.Properties.Resources.icons8_tarjeta_de_empleado_50_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(87)))), ((int)(((byte)(22)))));
+            this.button1.Image = global::Liskong.Properties.Resources.icons8_salida_30;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 39);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Salir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCambiarDatos
+            // 
+            this.btnCambiarDatos.FlatAppearance.BorderSize = 0;
+            this.btnCambiarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarDatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(87)))), ((int)(((byte)(22)))));
+            this.btnCambiarDatos.Image = global::Liskong.Properties.Resources.icons8_carpeta_de_usuario_24_1_;
+            this.btnCambiarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCambiarDatos.Location = new System.Drawing.Point(6, 81);
+            this.btnCambiarDatos.Name = "btnCambiarDatos";
+            this.btnCambiarDatos.Size = new System.Drawing.Size(127, 34);
+            this.btnCambiarDatos.TabIndex = 2;
+            this.btnCambiarDatos.Text = "Editar cuenta";
+            this.btnCambiarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCambiarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCambiarDatos.UseVisualStyleBackColor = true;
+            this.btnCambiarDatos.Click += new System.EventHandler(this.btnCambiarDatos_Click);
             // 
             // Menu
             // 
@@ -315,6 +331,7 @@ namespace Liskong
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +357,7 @@ namespace Liskong
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

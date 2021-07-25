@@ -93,6 +93,16 @@ namespace Liskong.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_tarjeta_de_empleado_50_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tarjeta-de-empleado-50(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logotipo_Blanco_Transparente {
             get {
                 object obj = ResourceManager.GetObject("Logotipo_Blanco_Transparente", resourceCulture);

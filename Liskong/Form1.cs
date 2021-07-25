@@ -113,5 +113,12 @@ namespace Liskong
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login ventana = new Login();
+            ventana.Show();
+            this.Dispose();
+        }
     }
 }
